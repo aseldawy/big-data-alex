@@ -129,7 +129,6 @@ public class App
         wordCounts.saveAsTextFile("wordcount-output.txt")
     }
 }
-
 ```
 
 * Create a new text file named "wordcount-input.txt" and add the following sample content to it.
