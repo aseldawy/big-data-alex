@@ -76,9 +76,13 @@ pois.plotImage(2000, 2000, "pois.png")
 
 2. Multilevel visualization. This visualization technique allows you to zoom in/out the data to see several levels of details for the data.
 ```scala
-pois.plotPyramid("provinces_pyramid", 10, opts = "mercator" -> true)
+pois.plotPyramid("pois_pyramid", 10, opts = "mercator" -> true)
 ```
 This will produce a directory named `pois_pyramid` which contains a file named `index.html`. Open the HTML file in any browser to explore the data. You can increase the number of levels of details if you want to see more details but it will take much longer for each additional zoom level.
+
+The output will look like the screenshot below.
+![POIs in Egypt Multilevel Plot Screensho](images/pois_pyramid.png)
+
 3. While this tutorial does not cover it, Beast can produce multilevel images more efficiently by the use of an adaptive index. You can find more details [on this link](https://bitbucket.org/bdlabucr/beast/src/master/doc/visualization.md).
 
 ### IV. Range filtering
@@ -103,6 +107,9 @@ A very powerful geospatial operation is spatial join. It allows you to combine t
 val province_poi: RDD[(IFeature, IFeature)] = provinces.spatialJoin(pois)
 println(province_poi.countByKey())
 ```
+
+The output would look like the image below.
+![POIs in Alexandria](images/pois_alex.png)
 
 ### Frequency Asked Questions (FAQ)
 * Q: I get an out of memory error when I run on the entire dataset.
